@@ -3,10 +3,6 @@
 
 Интерактивная страница, где можно редактировать текстовые элементы профиля: имя профиля, тип активности.
 
-* [Ссылка на проект](https://veronikasergienko.github.io/mesto-react)
-
-$ git remote add origin https://github.com/veronikasergienko/mesto-react.git
-
 **Технологии**
 * Grid Layout
 * Figma
@@ -16,10 +12,11 @@ $ git remote add origin https://github.com/veronikasergienko/mesto-react.git
 * HTML5
 * CSS3
 * JavaScript
+* React
 
 **GitHub**
 
-* [Ссылка на проект](https://veronikasergienko.github.io/mesto/index.html)
+* [Ссылка на проект](https://veronikasergienko.github.io/mesto-react)
 
 **Figma**
 
