@@ -65,8 +65,6 @@ function App() {
                         </div>
         </PopupWithForm>
 
-        <PopupWithForm name={'confirmation'} title={'Вы уверены?'} onClose={closeAllPopups}></PopupWithForm>
-
         <ImagePopup onClose={closeAllPopups} card={selectedCard}/>
 
       </div>
