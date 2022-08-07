@@ -3,7 +3,7 @@
 
 Интерактивная страница, где можно редактировать текстовые элементы профиля: имя профиля, тип активности.
 
-* [Ссылка на проект](https://veronikasergienko.github.io/mesto-react/index.html)
+* [Ссылка на проект](https://veronikasergienko.github.io/mesto-react)
 
 $ git remote add origin https://github.com/veronikasergienko/mesto-react.git
 
