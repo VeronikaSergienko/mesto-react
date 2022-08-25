@@ -9,7 +9,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
     React.useEffect(() => {
         setName(currentUser.name);
         setDescription(currentUser.about);
-      }, [currentUser]); 
+      }, [currentUser, isOpen]); 
     function handleChangeName(e) {
         setName(e.target.value);
       }
@@ -39,7 +39,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
         <div className="popup__input-conteiner">
           <input
             type="text"
-            value={name}
+            value={name || 'Жак-Ив Кусто'}
             onChange={handleChangeName}
             name="input-name"
             id="popup-name"
@@ -54,7 +54,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
         <div className="popup__input-conteiner">
           <input
             type="text"
-            value={description}
+            value={description || 'Исследователь океана'}
             onChange={handleChangeDescription}
             name="input-job"
             id="popup-about"

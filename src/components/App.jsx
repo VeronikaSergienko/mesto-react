@@ -22,7 +22,6 @@ function App() {
       .then(([profile, cards]) => {
         setcurrentUser(profile);
         setCurrentCards(cards);
-        console.log(cards);
       })
       .catch((err) => {
         console.log(err);
@@ -51,38 +50,56 @@ function App() {
 
   const handleCardLike = (card) => {
     const isLiked = card.likes.some(i => i._id === currentUser._id);
-    api.toggleLikes(card._id, isLiked).then((newCard) => {
+    api.toggleLikes(card._id, isLiked)
+    .then((newCard) => {
       setCurrentCards((currentCards) => currentCards.map((c) => c._id === card._id ? newCard : c));
+    })
+    .catch((err) => {
+      console.log(err);
     });
   }
 
   const handleCardDelete = (card) => {
-    api.deleteCard(card._id).then((res) => {
+    api.deleteCard(card._id)
+    .then((res) => {
       setCurrentCards((currentCards) => currentCards.filter((c) => !(c._id === card._id)));
+    })
+    .catch((err) => {
+      console.log(err);
     });
   }
 
   const handleUpdateUser = ({name, about}) => {
-    api.patchUserInfo({name, about}).then((res) => {
+    api.patchUserInfo({name, about})
+    .then((res) => {
       setcurrentUser(res);
       closeAllPopups();
     })
+    .catch((err) => {
+      console.log(err);
+    });
   }
 
   const handleUpdateAvatar = ({ avatar }) => {
-    api.patchUserAvatar({ avatar }).then((res) => {
-      console.log(res);
+    api.patchUserAvatar({ avatar })
+    .then((res) => {
       setcurrentUser(res);
       closeAllPopups();
     })
+    .catch((err) => {
+      console.log(err);
+    });
   }
 
   const handleAddPlaceSubmit = (newCard) => {
-    api.postCard(newCard).then((res) => {
-      console.log(res);
+    api.postCard(newCard)
+    .then((res) => {
       setCurrentCards([res, ...currentCards]);
       closeAllPopups();
     })
+    .catch((err) => {
+      console.log(err);
+    });
   }
 
   return (
